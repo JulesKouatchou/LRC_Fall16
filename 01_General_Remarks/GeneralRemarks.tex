@@ -1,0 +1,278 @@
+%
+\documentclass{beamer} 
+%
+\usepackage{beamerthemesplit}
+%\usepackage[pdftex]{graphicx}
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\usetheme{Frankfurt}
+%\usecolortheme{beaver}     % color theme
+\useoutertheme{infolines}   % defines the head and the footline of each slide
+\useinnertheme{rectangles}
+
+\usepackage{listings}
+
+\usepackage{etex, xy}
+\xyoption{all} 
+
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}{}
+
+
+%
+%
+\title[LRC]
+       {Fall 2016 Python Training}
+\author[SSAI]{Carlos Cruz, Jules Kouatchou, and Brent Smith\\
+        {\tiny carlos.a.cruz@nasa.gov, Jules.Kouatchou@nasa.gov, brent.smith@nasa.gov}}
+ \institute[GSFC]{\NASAlogo \\ Goddard Space Flight Center}
+\date{September 19, 2016}
+
+\def\NASAlogo{%
+  \includegraphics[scale=0.35,height=30pt]{Meatball.png}%
+}
+
+\def\logo{%
+  \includegraphics[scale=0.07,height=10pt]{Meatball.png}%
+}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% This is used to add line number to source code %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+        language=python,        % language of the code
+        basicstyle=\small\ttfamily, % size of the fonts used for the code
+        %basicstyle=\normalsize, % size of the fonts used for the code
+        numbers=left,           % where to put line numbers
+        numberstyle=\tiny,     % size of the fonts used for line numbers
+        stepnumber=1, 
+        numbersep=8pt,
+        showstringspaces=false, % underline spaces within strings
+        %aboveskip=-60pt,
+        numbersep=3pt,          % how far the line-numbers are from the code
+        frame=leftline,         % addition of a left frame line on source code
+        keywordstyle=\color{violet}\bfseries, % color keywords
+        commentstyle=\color{blue}\bfseries    % color comments
+        }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Title page slide
+
+\frame[plain]{\titlepage}
+
+%\frame{\frametitle{Table of contents}\tableofcontents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Remarks}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame[containsverbatim]{
+  \frametitle{Who Are We?}
+
+  \begin{itemize}
+  \item Carlos A. Cruz (Computational Scientist, Occasional Python User)
+  \item Jules Kouatchou (Computational Scientist, Occasional Python User)
+  \item E. Brent Smith (Programmer and Scientist, Daily Python User)
+  \end{itemize}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame[containsverbatim]{
+   \frametitle{Training Objectives}
+
+   We want to:
+%
+   \begin{enumerate}
+     \item Introduce the basic concepts of Python programming
+     \item Create functions and modules
+     \item Manipulate Python objects (list, tuple, arrays, etc.) 
+     \item Handle files
+     \item Do plotting
+  \end{enumerate}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame[containsverbatim]{
+  \frametitle{What we will Cover}
+
+  \begin{enumerate}
+  \item Core principles of Python: Day 1
+  \item Data manipulation with Python: Day 2 
+
+  \end{enumerate}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame[containsverbatim]{
+  \frametitle{Target Audience}
+
+%  \begin{itemize}
+%  \item People with little or no knowlege of Python: Day 1, Day 2 and Day 3
+%  \item Intermediate Python users: Day 2 and Day 3
+%  \item Advanced Python users: Day 3
+%  \end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}\hline\hline
+Python User  & Day 1 & Day 2  \\ \hline\hline
+Beginner       &  X      & X      \\
+Intermediate &          & X     \\ \hline\hline
+\end{tabular}
+\end{center}
+
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\frame[containsverbatim]{
+  \frametitle{What We Expect from You}
+
+  \begin{itemize}
+   \item Have your own laptop.
+   \item Install on your system a Python distribution (such as Anaconda) that should at least have iPython, Numpy, Matplotlib.
+   \item Install the package Git
+   \item Be able to create/edit files on your platform
+   \item Do the examples yourself as we move along
+   \item Ask questions
+  \end{itemize}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame[containsverbatim]{
+\frametitle{Obtaining the Materials}
+%
+
+
+You can obtain all the materials by issuing the command:
+  \begin{center}
+  {\tt git clone https://github.com/JulesKouatchou/LRC\_Fall16}
+  \end{center}
+  
+You will then get on your platform the directory {\tt LRC\_Fall16}.
+  %	
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\frame[containsverbatim]{
+  \frametitle{Beyond the Agenda}
+
+There are few topics that will not be covered but are worth looking at.
+Presentations were prepared on:
+
+\begin{enumerate}
+\item Datetime Module
+\item F2Py 
+\end{enumerate}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\frame[containsverbatim]{
+  \frametitle{Informal Self-Assessment}
+
+At the end of Day 1, you might consider taking a 25-question test at:
+
+  \begin{center}
+  \url{http://www.afterhoursprogramming.com/tests/practice/Python/} \\
+  \href{http://www.afterhoursprogramming.com/tests/practice/Python/}{}
+  \end{center}
+  
+
+}
+
+%\frame[containsverbatim]{
+%  \frametitle{Any Question?}
+%
+%To contact us, please send an email to:
+%\begin{center}
+%\href{mailto:pythonbootcamp@bigbang.gsfc.nasa.gov}{pythonbootcamp@bigbang.gsfc.nasa.gov} 
+%\end{center}
+%
+%}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\frame[containsverbatim]{
+%  \frametitle{}
+%}
+
+\frame[containsverbatim,allowframebreaks]{
+  \frametitle{Useful Pointers}
+  \begin{thebibliography}{9} 
+   \setbeamertemplate{bibliography item}[online]
+   \bibitem{O1} Python Programming - Introduction 
+    \newblock  
+     \url{http://www.youtube.com/watch?v=72RKMMyLxS8} \\
+     \href{http://www.youtube.com/watch?v=72RKMMyLxS8}{}
+%
+   \bibitem{O2} A Hands-On Introduction to Python for Beginning Programmers 
+    \newblock  
+     \url{https://www.youtube.com/watch?v=rkx5_MRAV3A} \\
+     \href{https://www.youtube.com/watch?v=rkx5_MRAV3A}{}
+%
+    \bibitem{O3} A Beginner's Python Tutorial  
+    \newblock  
+     \url{http://www.sthurlow.com/python/} \\
+     \href{http://www.sthurlow.com/python/}{} 
+%
+    \bibitem{O4} Invent with Python   
+    \newblock  
+     \url{http://inventwithpython.com/chapters/} \\
+     \href{http://inventwithpython.com/chapters/}{}  
+%
+%
+    \bibitem{O5} Think Python: How to Think Like a Computer Scientist   
+    \newblock  
+     \url{http://greenteapress.com/thinkpython/html/index.html} \\
+     \href{http://greenteapress.com/thinkpython/html/index.html}{}  
+         
+%
+  \setbeamertemplate{bibliography item}[book]
+    \bibitem{Langtangen}
+    Hans Petter Langtangen.
+    \newblock {\em A Primer on Scientific Programming with Python}.
+    \newblock Springer, 2009.
+ \setbeamertemplate{bibliography item}[book]
+    \bibitem{Lin2012}
+    Johnny Wei-Bing Lin.
+    \newblock {\em A Hands-On Introduction to Using Python in the Atmospheric and Oceanic Sciences}.
+    \newblock http://www.johnny-lin.com/pyintro, 2012.
+  \setbeamertemplate{bibliography item}[book]
+    \bibitem{McCormack}
+     Drew McCormack.
+    \newblock {\em Scientific Scripting with Python}.
+    \newblock 2009.
+  \end{thebibliography}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
